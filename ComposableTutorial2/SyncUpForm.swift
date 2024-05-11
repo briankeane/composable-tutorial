@@ -12,33 +12,41 @@ import SwiftUI
 struct SyncUpForm {
   @ObservableState
   struct State: Equatable {
+    var focus: Field? = .title
     var syncUp: SyncUp
+    
+    
+    enum Field: Hashable {
+      case attendee(Attendee.ID)
+      case title
+    }
   }
-
-
+  
+  
   enum Action: BindableAction {
     case addAttendeeButtonTapped
     case binding(BindingAction<State>)
     case onDeleteAttendees(IndexSet)
   }
-
-
+  
+  
   var body: some ReducerOf<Self> {
     BindingReducer()
-
+    
+    
     Reduce { state, action in
       switch action {
-
       case .addAttendeeButtonTapped:
-        state.syncUp.attendees.append(
-          Attendee(id: Attendee.ID())
-        )
+        let attendee = Attendee(id: Attendee.ID())
+        state.syncUp.attendees.append(attendee)
+        state.focus = .attendee(attendee.id)
         return .none
-
+        
+        
       case .binding:
         return .none
-
-
+        
+        
       case let .onDeleteAttendees(indexSet):
         state.syncUp.attendees.remove(atOffsets: indexSet)
         if state.syncUp.attendees.isEmpty {
@@ -54,11 +62,14 @@ struct SyncUpForm {
 
 struct SyncUpFormView: View {
   @Bindable var store: StoreOf<SyncUpForm>
-
+  @FocusState var focus: SyncUpForm.State.Field?
+  
+  
   var body: some View {
     Form {
       Section {
         TextField("Title", text: $store.syncUp.title)
+          .focused($focus, equals: .title)
         HStack {
           Slider(value: $store.syncUp.duration.minutes, in: 5...30, step: 1) {
             Text("Length")
@@ -73,12 +84,13 @@ struct SyncUpFormView: View {
       Section {
         ForEach($store.syncUp.attendees) { $attendee in
           TextField("Name", text: $attendee.name)
+            .focused($focus, equals: .attendee(attendee.id))
         }
         .onDelete { indices in
           store.send(.onDeleteAttendees(indices))
         }
-
-
+        
+        
         Button("New attendee") {
           store.send(.addAttendeeButtonTapped)
         }
@@ -86,14 +98,15 @@ struct SyncUpFormView: View {
         Text("Attendees")
       }
     }
+    .bind($store.focus, to: $focus)
   }
 }
 
 
 struct ThemePicker: View {
   @Binding var selection: Theme
-
-
+  
+  
   var body: some View {
     Picker("Theme", selection: $selection) {
       ForEach(Theme.allCases) { theme in
@@ -117,4 +130,25 @@ extension Duration {
     get { Double(components.seconds / 60) }
     set { self = .seconds(newValue * 60) }
   }
+}
+
+
+#Preview {
+  SyncUpFormView(
+    store: Store(
+      initialState: SyncUpForm.State(
+        syncUp: SyncUp(
+          id: SyncUp.ID(),
+          attendees: [
+            Attendee(id: Attendee.ID(), name: "Blob"),
+            Attendee(id: Attendee.ID(), name: "Blob Jr."),
+            Attendee(id: Attendee.ID(), name: "Blob Sr."),
+          ],
+          title: "Point-Free Morning Sync"
+        )
+      )
+    ) {
+      SyncUpForm()
+    }
+  )
 }
