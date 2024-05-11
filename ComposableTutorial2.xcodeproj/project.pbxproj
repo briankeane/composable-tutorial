@@ -18,6 +18,7 @@
 		D3911AB32BF027E900A8356D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D3911AB22BF027E900A8356D /* ComposableArchitecture */; };
 		D3911AB52BF0290A00A8356D /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AB42BF0290A00A8356D /* SyncUpsList.swift */; };
 		D3911AB72BF02B3900A8356D /* SyncUpListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AB62BF02B3900A8356D /* SyncUpListTests.swift */; };
+		D3911AB92BF035E200A8356D /* SyncUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AB82BF035E200A8356D /* SyncUpForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D3911AAF2BF0279F00A8356D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D3911AB42BF0290A00A8356D /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
 		D3911AB62BF02B3900A8356D /* SyncUpListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpListTests.swift; sourceTree = "<group>"; };
+		D3911AB82BF035E200A8356D /* SyncUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				D3911A892BF0244C00A8356D /* Assets.xcassets */,
 				D3911A8B2BF0244C00A8356D /* Preview Content */,
 				D3911AAF2BF0279F00A8356D /* Models.swift */,
+				D3911AB82BF035E200A8356D /* SyncUpForm.swift */,
 				D3911AB42BF0290A00A8356D /* SyncUpsList.swift */,
 			);
 			path = ComposableTutorial2;
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3911AB02BF0279F00A8356D /* Models.swift in Sources */,
+				D3911AB92BF035E200A8356D /* SyncUpForm.swift in Sources */,
 				D3911AB52BF0290A00A8356D /* SyncUpsList.swift in Sources */,
 				D3911A882BF0244A00A8356D /* ContentView.swift in Sources */,
 				D3911A862BF0244A00A8356D /* ComposableTutorial2App.swift in Sources */,
