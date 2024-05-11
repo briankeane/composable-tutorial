@@ -16,6 +16,7 @@
 		D3911AA32BF0244C00A8356D /* ComposableTutorial2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AA22BF0244C00A8356D /* ComposableTutorial2UITestsLaunchTests.swift */; };
 		D3911AB02BF0279F00A8356D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AAF2BF0279F00A8356D /* Models.swift */; };
 		D3911AB32BF027E900A8356D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D3911AB22BF027E900A8356D /* ComposableArchitecture */; };
+		D3911AB52BF0290A00A8356D /* SyncUpsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3911AB42BF0290A00A8356D /* SyncUpsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D3911AA02BF0244C00A8356D /* ComposableTutorial2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTutorial2UITests.swift; sourceTree = "<group>"; };
 		D3911AA22BF0244C00A8356D /* ComposableTutorial2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTutorial2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D3911AAF2BF0279F00A8356D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D3911AB42BF0290A00A8356D /* SyncUpsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUpsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D3911A892BF0244C00A8356D /* Assets.xcassets */,
 				D3911A8B2BF0244C00A8356D /* Preview Content */,
 				D3911AAF2BF0279F00A8356D /* Models.swift */,
+				D3911AB42BF0290A00A8356D /* SyncUpsList.swift */,
 			);
 			path = ComposableTutorial2;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3911AB02BF0279F00A8356D /* Models.swift in Sources */,
+				D3911AB52BF0290A00A8356D /* SyncUpsList.swift in Sources */,
 				D3911A882BF0244A00A8356D /* ContentView.swift in Sources */,
 				D3911A862BF0244A00A8356D /* ComposableTutorial2App.swift in Sources */,
 			);
